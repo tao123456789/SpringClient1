@@ -1,6 +1,5 @@
 package com.example.springcloudclient.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 import com.example.springcloudclient.utils.User;
@@ -12,9 +11,9 @@ public class HelloController {
     private String port;
 
     @GetMapping("/test")
-    public String helloRibbon(@PathVariable("name1") String name1) {
+    public String helloRibbon() {
         System.out.println("触发方法");
-        return "你好     " + name1 + ",this eureka port is  " + port;
+        return "你好,this eureka port is  " + port;
     }
 
     @GetMapping("/test2")
