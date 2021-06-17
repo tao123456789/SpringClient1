@@ -12,17 +12,19 @@ public class HelloController {
 
     @GetMapping("/test")
     public String helloRibbon() {
-        System.out.println("触发方法");
-        return "你好,this eureka port is  " + port;
+        System.out.println("=====触发test方法(get无参数)=====");
+        return "【get】你好" + "\n" + "+this eureka port is  " + port;
     }
 
-    @GetMapping("/test2")
+    @GetMapping("/test2/{testname}")
     public String helloRibbon2(@PathVariable("testname") String testname) {
-        return "你好    " + testname + "\n"+ ",this eureka port is  " + port;
+        System.out.println("=====触发test2方法(get有参数)=====");
+        return "【get（带参数）】你好," + testname + "\n"+ ",this eureka port is  " + port;
     }
 
     @PostMapping("/UserInfo")
-    public String get(@RequestBody User user){
-        return "成功";
+    public String Post(@RequestBody String user){
+        System.out.println("=====触发test方法(post无参数)=====");
+        return "post成功" +"\n" + user;
     }
 }

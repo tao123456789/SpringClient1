@@ -8,7 +8,7 @@ public class timeJob {
 
         timejob timejob=new timejob();
         public void execution(){
-            System.out.println("-----定时任务触发------");
+            System.out.println("=====定时任务触发=====");
             timejob.timejob();
         }
 }
